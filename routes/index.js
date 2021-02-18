@@ -5,5 +5,11 @@ var projects = require('../projects.json');
  */
 
 exports.view = function(request, response){
-  	response.render('index', projects);
+	projects.projects.forEach((p) => { p['viewAlt'] = false; });
+  response.render('index', projects);
+};
+
+exports.viewAlt = function(request, response){
+	projects.projects.forEach((p) => { p['viewAlt'] = true; });
+	response.render('index', projects);
 };
