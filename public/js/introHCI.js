@@ -11,6 +11,9 @@ $(document).ready(function() {
 function initializePage() {
 	// your code here
 	$("button.likeBtn").click(function() {
+		ga("send", "event", 'like-alt', 'click');
+	})
+	$("button.btn").click(function() {
 		ga("send", "event", 'like', 'click');
 	})
 }
